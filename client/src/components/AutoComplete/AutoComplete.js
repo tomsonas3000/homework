@@ -39,12 +39,12 @@ const AutoComplete = () => {
           }}
           value={query}
         ></input>
-        <button>
-          <img src={SearchIcon} alt="Search icon" />
-        </button>
       </div>
+      <button disabled={true}>
+        <img src={SearchIcon} alt="Search icon" />
+      </button>
 
-      {isLoading ? (
+      {/*isLoading ? (
         <h1>Loading...</h1>
       ) : (
         <div>
@@ -59,7 +59,7 @@ const AutoComplete = () => {
             })}
           </ul>
         </div>
-      )}
+        )*/}
     </div>
   );
 };

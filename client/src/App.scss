@@ -6,34 +6,48 @@ body {
 }
 
 .autocomplete {
-  padding: 30px 30px 15px;
+  padding: 35px 30px 15px;
   overflow: auto;
   display: flex;
   background: linear-gradient(
     to right,
-    rgba(255, 105, 15, 1),
+    rgb(255, 105, 15),
     rgba(232, 56, 27, 1)
   );
+
+  button {
+    width: 4%;
+    margin-left: 0.5rem;
+    background-color: rgb(255, 255, 255);
+    img {
+      filter: invert(48%) sepia(85%) saturate(2692%) hue-rotate(353deg)
+        brightness(102%) contrast(101%);
+    }
+    border: 0;
+  }
 
   &-search-field {
     background-color: rgba(255, 255, 255, 0.2);
     flex: 1;
-
+    display: flex;
+    align-items: center;
     img {
-      width: 4%;
+      filter: invert(100%) sepia(11%) saturate(7500%) hue-rotate(168deg)
+        brightness(114%) contrast(110%);
+      width: 2%;
+      padding: 0.5rem;
     }
 
     input {
       background-color: rgba(255, 255, 255, 0);
       width: 90%;
       border: 0;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      align-items: center;
     }
-
-    button {
-      width: 4%;
-      img {
-        width: 100%;
-      }
+    ::placeholder {
+      color: rgb(255, 255, 255);
     }
   }
 }
