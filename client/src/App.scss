@@ -1,5 +1,39 @@
-.container {
-  padding: 30px 30px;
-  margin: 0 auto;
+$font-stack: Arial, Helvetica, sans-serif;
+
+body {
+  background-color: #ffffff;
+  font-family: $font-stack;
+}
+
+.autocomplete {
+  padding: 30px 30px 15px;
   overflow: auto;
+  display: flex;
+  background: linear-gradient(
+    to right,
+    rgba(255, 105, 15, 1),
+    rgba(232, 56, 27, 1)
+  );
+
+  &-search-field {
+    background-color: rgba(255, 255, 255, 0.2);
+    flex: 1;
+
+    img {
+      width: 4%;
+    }
+
+    input {
+      background-color: rgba(255, 255, 255, 0);
+      width: 90%;
+      border: 0;
+    }
+
+    button {
+      width: 4%;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
