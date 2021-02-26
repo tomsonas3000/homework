@@ -13,8 +13,8 @@ const AutoComplete = () => {
 
   useEffect(() => {
     query.length > 0
-      ? inputRef1?.current?.focus()
-      : inputRef2?.current?.focus();
+      ? inputRef2?.current?.focus()
+      : inputRef1?.current?.focus();
     setMovies([]);
     setSelectedMovie("");
     const timer = setTimeout(() => {
