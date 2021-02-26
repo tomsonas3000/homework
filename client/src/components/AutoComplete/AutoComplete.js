@@ -28,38 +28,63 @@ const AutoComplete = () => {
   }, [query]);
 
   return (
-    <div className="autocomplete">
-      <div className="autocomplete-search-field">
-        <img src={MovieIcon} alt="Movie icon" />
-        <input
-          placeholder="Enter a movie name"
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setLoading(e.target.value.length >= 3);
-          }}
-          value={query}
-        ></input>
+    <div>
+      <div className="autocomplete">
+        <div className="autocomplete-search-field">
+          <img src={MovieIcon} alt="Movie icon" />
+          {query.length === 0 ? (
+            <input
+              placeholder="Enter a movie name"
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setLoading(e.target.value.length >= 3);
+              }}
+              value={query}
+            ></input>
+          ) : null}
+        </div>
+        {query.length === 0 ? (
+          <button disabled={true}>
+            <img src={SearchIcon} alt="Search icon" />
+          </button>
+        ) : null}
       </div>
-      <button disabled={true}>
-        <img src={SearchIcon} alt="Search icon" />
-      </button>
-
-      {/*isLoading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <div>
-          <ul>
+      {query.length !== 0 ? (
+        <div className="results">
+          <table>
+            <tr className="border_bottom">
+              <td>
+                <img src={MovieIcon} alt="Movie icon" />
+              </td>
+              <td>
+                <input
+                  placeholder="Enter a movie name"
+                  onChange={(e) => {
+                    setQuery(e.target.value);
+                    setLoading(e.target.value.length >= 3);
+                  }}
+                  value={query}
+                ></input>
+                <p>Enter a movie name</p>
+              </td>
+            </tr>
             {movies.map((movie) => {
               return (
-                <li>
-                  <h4>{movie.original_title}</h4>
-                  <p>{movie.overview}</p>
-                </li>
+                <tr>
+                  <td></td>
+                  <td>
+                    <p>{movie.title} </p>
+                    <p>
+                      {movie.vote_average}
+                      {movie.release_date}
+                    </p>
+                  </td>
+                </tr>
               );
             })}
-          </ul>
+          </table>
         </div>
-        )*/}
+      ) : null}
     </div>
   );
 };

@@ -5,6 +5,9 @@ body {
   font-family: $font-stack;
 }
 
+*:focus {
+  outline: none;
+}
 .autocomplete {
   padding: 35px 30px 15px;
   overflow: auto;
@@ -45,9 +48,46 @@ body {
       font-weight: bold;
       color: rgb(255, 255, 255);
       align-items: center;
+      &:focus {
+        outline: none;
+      }
     }
     ::placeholder {
       color: rgb(255, 255, 255);
     }
+  }
+}
+
+.results {
+  margin-top: -65px;
+  margin-left: 80px;
+  margin-right: 35px;
+  padding: 5px 5px 15px;
+  overflow: auto;
+  display: flex;
+  background: rgb(253, 253, 253);
+  box-shadow: 5px 5px 10px #888888;
+  border-radius: 5px;
+  input {
+    border: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+  table {
+    width: 100%;
+    td:first-child {
+      width: 1.5%;
+    }
+    tr.border_bottom td {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    border-collapse: collapse;
+  }
+  img {
+    width: 100%;
+  }
+  p {
+    margin: 0 0;
   }
 }
